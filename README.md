@@ -28,5 +28,4 @@ GitHub-Repo/
 
  - Clone this repositry
  ```bash
-     git clone 
-  https://github.com/Yuvaraj200201/Tripadvisor-clone
+     git clone https://github.com/Yuvaraj200201/Tripadvisor-clone

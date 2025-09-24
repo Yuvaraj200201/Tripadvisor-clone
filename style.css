@@ -5,7 +5,6 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-
 .title {
   display: flex;
   justify-content: space-between;
@@ -92,39 +91,23 @@ body::-webkit-scrollbar {
   text-align: center;
   font-size: 70px;
 }
-
 .navbar {
   display: flex;
-  justify-content: space-between;
-  margin: 0 200px 0 200px;
+  gap: 20px;
+  justify-content: center;
+  overflow-x: auto;
 }
-
-.navbs {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  border-bottom: 2px solid black;
-  height: 40px;
-  cursor: pointer;
-}
-
-.navbs:hover {
-  color: gray;
-}
-
 .navb {
   display: flex;
   align-items: center;
-  gap: 5px;
-  height: 40px;
+  gap: 10px;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+.navb:hover {
+  text-decoration: underline 3px;
   cursor: pointer;
 }
-
-.navb:hover {
-  border-bottom: solid black 2px;
-  color: gray;
-}
-
 .searchbar {
   display: flex;
   align-items: center;
@@ -178,23 +161,28 @@ body::-webkit-scrollbar {
   top: 50px;
   left: 10%;
   width: 400px;
-  color: white;
   font-size: 20px;
+  background-image: linear-gradient(to right, red, rgb(243, 7, 184), blue);
+  /* -webkit-background-clip: text; */
+  background-clip: text;
+  color: transparent;
 }
 
 .saleimg__content span {
   background-color: white;
-  color: black;
+  color: red;
   padding: 5px;
   border-radius: 5px;
+  font-weight: bolder;
 }
 
 .ai {
   background-color: white;
-  color: black;
+  color: blue;
   display: inline;
   padding: 2%;
   border-radius: 20px;
+  font-weight: bolder;
 }
 
 .ai:hover {
@@ -450,9 +438,14 @@ p {
   .navbar {
     display: flex;
     gap: 30px;
-    overflow-x: scroll;
-    margin: 0 60px 0 60px;
+    overflow-x: auto;
+    margin: 0 40px;
+    gap: 8px;
     justify-content: center;
+  }
+  .navb {
+    min-width: 100px;
+    flex-shrink: 0;
   }
   .navbar::-webkit-scrollbar {
     display: none;
@@ -486,18 +479,27 @@ p {
     width: 300px;
   }
   .aboutus__logo img {
-  padding-left: 0;
-  padding: 5%;
-}
+    padding-left: 0;
+    padding: 5%;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 812px) {
   .title {
     margin: 0 20px 0 20px;
     align-items: center;
   }
   .navbar {
-    padding: 0 20px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 5px;
+    gap: 8px;
+    overflow-x: auto;
+    width: auto;
+  }
+  .nav {
+    min-width: 90px;
+    flex-shrink: 0;
   }
   .title__head h1 {
     margin-right: 0;
@@ -545,6 +547,9 @@ p {
 }
 
 @media screen and (max-width: 641px) {
+  body {
+    font-size: x-small;
+  }
   body p {
     margin-bottom: 10px;
     margin-top: 0;
@@ -554,14 +559,10 @@ p {
     margin-top: 10px;
   }
   .title {
-    margin: 0 20px 0 20px;
+    margin: 0 10px 0 10px;
   }
-  .title__head {
-    margin: auto;
-  }
-
-  .title__head h1 {
-    margin-right: 50px;
+  .langsign {
+    gap: 5px;
   }
   .question {
     font-size: 40px;
@@ -570,13 +571,17 @@ p {
   .title__nav {
     display: none;
   }
-
+  .navbar {
+    justify-content: flex-start;
+    margin: 0 20px;
+    gap: 15px;
+  }
+  .navb {
+    gap: 2px;
+  }
   .title__signin {
     flex-direction: column;
     align-items: center;
-  }
-  .navbar {
-    margin: 0 30px 0 30px;
   }
   .searchbar {
     width: 90%;
@@ -603,10 +608,11 @@ p {
     height: 250px;
   }
   .saleimg__content {
-    width: 50%;
+    width: 70%;
     height: auto;
-    font-size: 12px;
+    font-size: 10px;
     top: 20px;
+    line-height: 150%;
   }
   .seasides {
     margin-bottom: 30px;
@@ -660,9 +666,8 @@ p {
     padding: 10px;
   }
   .footer {
-    margin: 50px 0 0 0;
-    padding: 10px;
-    font-size: 10px;
+    margin: 20% 0 0 0;
+    padding: 0;
   }
   .aboutus {
     margin-bottom: 10px;
@@ -675,12 +680,99 @@ p {
     width: 80%;
   }
   .aboutus__logo img {
-  padding: 0;
-  height: 48px;
-  width: 48px;
+    padding: 0;
+    height: 48px;
+    width: 48px;
+  }
+  .links {
+    gap: 5%;
+    flex-wrap: wrap;
+  }
 }
-.links {
-  gap: 5%;
-  flex-wrap: wrap;
-}
+@media screen and (max-width: 320px) {
+  .langsign h3 {
+    font-size: x-small;
+  }
+  .signin__sign {
+    font-size: x-small;
+    font-weight: bolder;
+  }
+  .question {
+    font-size: xx-large;
+  }
+  .navbar{
+    gap: 3px;
+  }
+  .navbar h4 {
+    font-size: small;
+  }
+  .searchbar {
+    width: 80%;
+  }
+  .searchbar input {
+    font-size: small;
+  }
+  .searchbar button {
+    font-size: small;
+  }
+  .ai span {
+    font-size: x-small;
+  }
+  .saleimg img {
+    height: fit-content;
+  }
+  .saleimg__content {
+    font-size: 8px;
+  }
+  .seaside h2,
+  p {
+    font-size: 12px;
+  }
+  .seasides__img img {
+    width: 160px;
+    height: 180px;
+  }
+  .chennai h2,
+  p {
+    font-size: 12px;
+  }
+  .madras__img img {
+    width: 160px;
+    height: 180px;
+  }
+  .madras h3,
+  p,
+  h4 {
+    font-size: 12px;
+  }
+  .more h2,
+  h3 {
+    font-size: 12px;
+  }
+  .more__img img {
+    width: 160px;
+    height: 180px;
+  }
+  .sponcer__contant h1 {
+    font-size: medium;
+  }
+  .text {
+    display: none;
+  }
+  .sponcer__contant button {
+    font-size: 12px;
+    padding: 7px;
+  }
+  .last {
+    display: none;
+  }
+  .footer {
+    padding: 0;
+  }
+  .aboutus {
+    padding-left: 7%;
+  }
+  .aboutus-2 {
+    padding-left: 7%;
+  }
 }
